@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+
+
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name"><br>
+    </p>
+
+
+    <div>{{ name }}</div>
+</div>
+
+<div class="play-container">
+    <p>{{ clickCounter }} times.</p>
+    <div><input type="button" value="click me" (click)="countClick()"></div>    
+</div>
+
+<!-- <div class=  -->
