@@ -1,18 +1,91 @@
-<h1>Welcome!</h1>
+<h1>Technician time table</h1>
 
 
 <div class="play-container">
-    <p>
-        <input type="text" [(ngModel)]="name"><br>
-    </p>
+    <div>
+        <fieldset>
+            <legend> Ticket </legend>
+            <div>
+                <span><label for="openTicket">open ticket: </label></span>
+                <span><input type="date" id="startDate" name="trip-start" min="2022-01-01" max="2022-12-31" [(ngModel)]="openTicketDate"></span>
+                <span><input type="time" id="startTime" name="appt" min="09:00" max="18:00" [(ngModel)]="openTicketTime" required></span>
+            <!-- </div> -->
+            <!-- <div> -->
+                <span><label for="closedTicket">closed ticket: </label></span>
+                <span><input type="date" id="endDate" name="trip-start" min="2022-01-01" max="2022-12-31" [(ngModel)]="closedTicketDate"></span>
+                <span><input type="time" id="endTime" name="appt" min="09:00" max="18:00"  [(ngModel)]="closedTicketTime" required></span>
+            </div>
+        </fieldset>
+    </div>
+    <div>&nbsp;</div>
+    <div>
+        <fieldset>
+            <legend> User </legend>
+
+            <span><label for="lUserFirstName">First Name:</label></span>
+            <span><input type="text" [(ngModel)]="userFirstName"></span>
+
+            <span><label for="lUserLastName">Last Name:</label></span>
+            <span><input type="text" [(ngModel)]="userLastName"></span>
+
+            <span><label for="lUserPhone1">Phone #1:</label></span>
+            <span><input type="text" [(ngModel)]="userPhone1"></span>
+
+            <span><label for="lUserPhone2">Phone #2:</label></span>
+            <span><input type="text" [(ngModel)]="userPhone2"></span>
 
 
-    <div>{{ name }}</div>
+        </fieldset>
+    </div>
+    <div>&nbsp;</div>
+    <div>
+        <fieldset>
+            <legend> Technician </legend>
+
+            <span><label for="lTechnicianFirstName">First Name:</label></span>
+            <span><input type="text" [(ngModel)]="technicianFirstName"></span>
+
+            <span><label for="lTechnicianLastName">Last Name:</label></span>
+            <span><input type="text" [(ngModel)]="technicianLastName"></span>
+
+            <span><label for="lTechnicianPhone1">Phone #1:</label></span>
+            <span><input type="text" [(ngModel)]="technicianPhone1"></span>
+
+            <span><label for="lTechnicianPhone2">Phone #2:</label></span>
+            <span><input type="text" [(ngModel)]="technicianPhone2"></span>
+
+
+        </fieldset>
+    </div>
+    <div>
+        <br/>
+        <div>
+            <button class="myButton" type="button"> submit </button>
+            &nbsp;&nbsp;&nbsp;
+            <button class="myButton" type="button"> clear </button>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<div class="play-container">
+    <fieldset>
+        <legend> Ticket Display </legend>    
+    <div>
+        <div> open ticket: <u> {{openTicketDate}} </u> &nbsp;--&nbsp; <u> {{openTicketTime}} </u></div>
+        <div> closed ticket: <u> {{closedTicketDate}} </u> &nbsp;--&nbsp; <u> {{closedTicketTime}} </u></div>
+        <div> User: <u> {{ userFirstName }} </u> &nbsp;,&nbsp; <u> {{userLastName}} </u> &nbsp;,&nbsp; <u> {{userPhone1}} </u> &nbsp;,&nbsp; <u> {{userPhone2}} </u></div>
+        <div> Technician: <u> {{ technicianFirstName }} </u> &nbsp;,&nbsp; <u> {{technicianLastName}} </u> &nbsp;,&nbsp; <u> {{technicianPhone1}} </u> &nbsp;,&nbsp; <u> {{technicianPhone2}} </u></div>
+
+    </div>
+    </fieldset>
 </div>
 
 <div class="play-container">
     <p>{{ clickCounter }} times.</p>
-    <div><input type="button" value="click me" (click)="countClick()"></div>    
+    <div><input type="button" value="click me" (click)="countClick()"></div>
 </div>
 
 <!-- <div class=  -->
